@@ -1,0 +1,345 @@
+/*
+Theme Name: Dosquebradas
+Author: Juan León
+Description: Dosquebradas es una plantilla versatil para mostrar noticias o entradas de blog, cuenta con varios diseños para páginas estáticas
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+Este tema, así como WordPress, se encuentra bajo la licencia GLP.
+Úsala para compartir algo extraordinario, y compartela
+*/
+
+/** Utilidades Globales */
+
+
+	body{
+		font-family: 'EB Garamond', serif;
+	}
+
+	button {
+		cursor: pointer;
+	}
+
+	button:focus {
+	    outline: none;
+	}
+
+	h1, h2, h3, h4, h5, h6{
+		font-family: 'Forum', cursive;	
+		font-weight: 600;
+	}
+
+	h3 small,		
+	h5 small{		
+		font-family: 'Forum', cursive;	
+		font-weight: 300;
+	}
+
+	p, ul li{
+		font-family: 'EB Garamond', serif;
+		font-size: 18px;
+		font-weight: 100;
+		color: black;
+	}
+
+	a:hover{
+		color: #343a40 !important;
+	}
+
+	.breadcrumb-item+.breadcrumb-item::before {
+	    display: inline-block;
+	    padding-right: .5rem;
+	    padding-left: .5rem;
+	    color: white;
+	    content: "/";
+	}
+
+	.breadcrumb-item{
+		font-size: 1.3em;
+	}
+
+	.form-control:focus{
+		box-shadow: none;
+		border-color: none !important;
+		border-radius: none !important;
+	}	
+
+
+	.text-gold{
+		color: #C1922D !important;
+	}
+
+	.text-green{
+		color: #06882e;
+	}
+
+	a .text-green:hover{
+		color: #06882e !important;
+	}
+
+	.bg-none{
+		background-color: transparent;
+	}
+
+	.bg-white{
+		background-color: white;
+	}
+
+	.bg-green{
+		background-color: #06882e;
+	}
+
+	.bg-gold{
+		background-color: #C1922D !important;
+	}
+
+	.content-post ul li{
+		list-style-type: circle;
+	}
+
+	.form-control:focus{
+		border-color: black;
+	}
+
+	.border-green {
+	    border-color: #06882e !important;
+	}
+
+	.btn-green {
+	    color: #fff;
+	    background-color: #06882e;
+	    border-color: #06882e;
+	}
+
+
+
+
+
+
+/** Corusel */
+	body{
+		background-image: url("images/fondo.png")
+	}
+	.slider-1{		
+	    background-image: url("images/slider1.jpg");
+	}
+	
+	.slider-2{		
+	    background-image: url("images/slider2.jpg");
+	}
+	
+	.slider-3{		
+	    background-image: url("images/slider3.jpg");
+	}
+
+	.parallax { 
+	    /* Set a specific height */
+	    /*height: 550px; */
+
+	    /* Create the parallax scrolling effect */
+	  /*  background-attachment: fixed;
+	    background-position: center;
+	    background-repeat: no-repeat;
+	    background-size: cover;*/
+	}
+
+
+
+/** Nav-menu */
+	
+	.container-navbar{
+		box-shadow: 1px 0px 4px 0px  #d4d4d4;
+		/*border-bottom: 1px solid #C1922D;*/
+	}
+
+	.logo{
+		width: 180px;
+	}
+
+	.navbar-collapse{
+		z-index: 9;
+	}
+
+	.nav-link b{
+		font-family: 'Forum', cursive;	
+	}
+
+	.nav-link:hover{
+	}
+
+	@media screen and (max-width: 600px){
+		.logo{
+			width: 55px;
+		}
+	}
+
+	@media screen and (max-width: 991px){
+		.container-navbar{
+			padding: 0;
+		}
+		#principalNavbar{
+			border-top: 1px solid #d8d3d3;
+		}
+	}
+
+	#principalNavbar ul li a{
+		font-family: 'EB Garamond', serif;
+		font-size: 1.1em;
+		/*color: #4FA640;*/
+	}
+
+	.navbar-light .navbar-nav .nav-link {
+	    color: rgb(0, 0, 0);
+	}
+	.flex-column li a {
+	    color: #ffffff;
+	    text-decoration: none;
+	    background-color: transparent;
+	    -webkit-text-decoration-skip: objects;
+	}
+	.flex-column li {
+	    font-family: 'EB Garamond', serif;
+	    font-size: 18px;
+	    font-weight: 100;
+	    color: white;
+	}
+	.flex-column .dropdown-item{
+	    color: black;
+	}
+	.dropdown-item{
+		color: black;
+	}
+	.dropdown-toggle{
+		cursor: pointer;
+	}
+	a:hover{
+		outline: none !important;
+	}
+	.dropdown:hover>.dropdown-menu {
+	  display: block;
+	}
+/** Post */
+	.excerpt-notice{
+		line-height: .9;
+	}
+
+	.text-excerpt{
+		line-height: 1.1;
+	}
+	
+	.coment-line{
+		border-bottom: 2px solid grey;
+	}
+
+	.coment-container .card-body .media-body p{
+		line-height: 1.2;
+	}
+
+	.respond-coment{
+		width: 90%;
+	}
+
+	.card-photo-foot{
+		background-color: #ffffffa1;
+		width: 50% !important;
+	}
+
+	.wp-caption{
+		position: relative;
+	}
+
+	.wp-caption-text{
+		background-color: #ffffffa1;
+		/*background-color: red;*/
+		position: absolute;
+		bottom: -16px;
+		height: 50px;
+		padding: 14px 20px;
+		width: 75%;
+		font-size: 16px;
+	}
+
+	.wp-caption-text:before{
+		font-family: FontAwesome;
+		content: "\f083";
+		margin-right: 10px;
+	}
+
+	@media screen and (max-width: 991px){
+		.card-photo-foot{
+			width: 100% !important;
+		}
+
+		.wp-caption-text{
+			width: 100% !important;
+		}
+
+	}
+
+
+	.comment-respond{
+		width: 100%;
+	}
+
+	/*Pagination*/
+	.page-numbers {
+		display: inline-block;
+		padding: 5px 10px;
+		margin: 0 2px 0 0;
+		border: 1px solid #59AF6C;
+		line-height: 1;
+		text-decoration: none;
+		border-radius: 2px;
+		font-weight: 600;
+	}
+	a.page-numbers{
+		color: #59AF6C;
+	}
+	.page-numbers.current,
+	a.page-numbers:hover {
+		background: #59AF6C;
+		border: 1px solid #eee;
+		color: white !important;
+		text-decoration: none;
+	}
+	/*3b99ff*/
+
+/**
+* Sidebar
+*/
+
+	table,
+	#wp-calendar{
+		width: 100%;
+	}
+
+
+/**
+* footer
+*/
+
+
+.bg-footer{
+	background-color: #068830 !important;
+	background-color: #212121 !important;
+}
+
+
+@media (min-width: 768px){
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1  {
+    width: 100%;
+    *width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 {
+    width: 14.285714285714285714285714285714%;
+    *width: 14.285714285714285714285714285714%;
+  }
+}
