@@ -213,53 +213,6 @@
 	 */
 
 	function cptui_register_my_cpts() {
-		/**
-		 * Post Type: Estrategias.
-		 */
-
-		$labels = array(
-			"name" => __( "Estrategias", "dosquebradas" ),
-			"singular_name" => __( "Estrategia", "dosquebradas" ),
-			"menu_name" => __( "Mis Estrategias", "dosquebradas" ),
-			"all_items" => __( "Todas las Estrategias", "dosquebradas" ),
-			"add_new" => __( "Agregar Nueva", "dosquebradas" ),
-			"add_new_item" => __( "Agregar Nueva Estadística", "dosquebradas" ),
-			"edit_item" => __( "Editar Estrategia", "dosquebradas" ),
-			"new_item" => __( "Nueva Estrategia", "dosquebradas" ),
-			"view_item" => __( "Ver Estrategia", "dosquebradas" ),
-			"view_items" => __( "Ver Estrategias", "dosquebradas" ),
-			"search_items" => __( "Buscar Estrategia", "dosquebradas" ),
-			"not_found" => __( "No se encontraron Estrategias", "dosquebradas" ),
-			"not_found_in_trash" => __( "Ninguna Estrategia se encontró en la papelera", "dosquebradas" ),
-			"parent_item_colon" => __( "Estrategia Padre", "dosquebradas" ),
-			"featured_image" => __( "Imagen Destacada para la Estarteia", "dosquebradas" ),
-			"items_list_navigation" => __( "Navegación lista de Estrategias", "dosquebradas" ),
-			"items_list" => __( "Lista de Estrategias", "dosquebradas" ),
-			"attributes" => __( "Atributos de Estrategia", "dosquebradas" ),
-			"parent_item_colon" => __( "Estrategia Padre", "dosquebradas" ),
-		);
-
-		$args = array(
-			"label" => __( "Estrategias", "dosquebradas" ),
-			"labels" => $labels,
-			"description" => "Estrategias del Observatorio del delito en Dosquebradas, Risaralda.",
-			"public" => true,
-			"publicly_queryable" => true,
-			"show_ui" => true,
-			"show_in_rest" => false,
-			"rest_base" => "",
-			"has_archive" => false,
-			"show_in_menu" => true,
-			"exclude_from_search" => false,
-			"capability_type" => "post",
-			"map_meta_cap" => true,
-			"hierarchical" => false,
-			"rewrite" => array( "slug" => "estrategias", "with_front" => true ),
-			"query_var" => true,
-			"supports" => array( "title", "editor", "thumbnail" ),
-		);
-
-		register_post_type( "estrategias", $args );
 
 		/**
 		 * Post Type: Estadísticas Observatorio Delito.
@@ -348,82 +301,6 @@
 						'param' => 'post_type',
 						'operator' => '==',
 						'value' => 'estadisticas',
-						'order_no' => 0,
-						'group_no' => 0,
-					),
-				),
-			),
-			'options' => array (
-				'position' => 'normal',
-				'layout' => 'no_box',
-				'hide_on_screen' => array (
-					0 => 'permalink',
-					1 => 'the_content',
-					2 => 'excerpt',
-					3 => 'custom_fields',
-					4 => 'discussion',
-					5 => 'comments',
-					6 => 'revisions',
-					7 => 'slug',
-					8 => 'author',
-					9 => 'format',
-					10 => 'featured_image',
-					11 => 'categories',
-					12 => 'tags',
-					13 => 'send-trackbacks',
-				),
-			),
-			'menu_order' => 0,
-		));
-		register_field_group(array (
-			'id' => 'acf_estrategias',
-			'title' => 'Estrategias',
-			'fields' => array (
-				array (
-					'key' => 'field_5a1c30ba8a2b9',
-					'label' => 'Título de la Estrategia',
-					'name' => 'titulo_estrategia',
-					'type' => 'text',
-					'instructions' => 'Nombre de la Estrategia',
-					'required' => 1,
-					'default_value' => '',
-					'placeholder' => '',
-					'prepend' => '',
-					'append' => '',
-					'formatting' => 'html',
-					'maxlength' => '',
-				),
-				array (
-					'key' => 'field_5a1c31858a2ba',
-					'label' => 'Descripción',
-					'name' => 'descripcion',
-					'type' => 'textarea',
-					'instructions' => 'Descripción de la estrategia',
-					'required' => 1,
-					'default_value' => '',
-					'placeholder' => '',
-					'maxlength' => '',
-					'rows' => '',
-					'formatting' => 'br',
-				),
-				array (
-					'key' => 'field_5a1c321f8a2bb',
-					'label' => 'Imagen destacada',
-					'name' => 'imagen_destacada',
-					'type' => 'image',
-					'instructions' => 'Imagen de 250x200 px',
-					'required' => 1,
-					'save_format' => 'url',
-					'preview_size' => 'thumbnail',
-					'library' => 'all',
-				),
-			),
-			'location' => array (
-				array (
-					array (
-						'param' => 'post_type',
-						'operator' => '==',
-						'value' => 'estrategias',
 						'order_no' => 0,
 						'group_no' => 0,
 					),
