@@ -45,10 +45,19 @@ Template Name: Estadisticas
 
 									<?php while ( have_posts() ) : the_post(); ?>
 
+										<?php 
+											$extension = substr(get_field('documento'), -4);
+											if ( $extension == '.xls' || $extension == 'xlsx' ) {
+												$img = '/images/xls.png';
+											}else{
+												$img = '/images/pdf.png';
+											}
+										?>
+
 									    <tr>
 									      	<td class="align-middle p-1">
 									      		<div class="media">
-												  <img class="align-self-center mr-3 img-fluid" width="40" src="<?php bloginfo('template_directory') ?>/images/pdf.png" alt="pdf">
+												  <img class="align-self-center mr-3 img-fluid" width="40" src="<?php bloginfo('template_directory') ?><?php echo $img; ?>" alt="<?php echo $extension; ?>">
 												  <div class="media-body pt-2">
 												    <span class="align-middle">
 												    	<?php the_field('titulo'); ?>
