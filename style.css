@@ -1,4 +1,4 @@
-/*
+﻿/*
 Theme Name: Dosquebradas
 Author: Juan León
 Description: Dosquebradas es una plantilla versatil para mostrar noticias o entradas de blog, cuenta con varios diseños para páginas estáticas
@@ -342,4 +342,7 @@ Este tema, así como WordPress, se encuentra bajo la licencia GLP.
     width: 14.285714285714285714285714285714%;
     *width: 14.285714285714285714285714285714%;
   }
+}
+b, strong{
+font-weight: 900 !important;
 }

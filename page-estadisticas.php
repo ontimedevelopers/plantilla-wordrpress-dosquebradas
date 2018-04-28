@@ -34,7 +34,7 @@ Template Name: Estadisticas
 
                 <div class="card rounded-0 border-0 mt-5 pt-3">
 				  	<div class="card-header bg-dark text-white">
-				    	Acá encontrarás los informes estadísticos de los delitos en Dosquebradas - Risaralda
+				    	Consulta de manera cronológica los balances delictivos y operativos del municipio de Dosquebradas
 				  	</div>
 				  	<div class="card-body pr-0 pl-0">
 				    	<table class="table table-bordered">
