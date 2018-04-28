@@ -28,13 +28,19 @@
 		</div>
 
 		<div class="row text-center pr-0 pl-1 w-100 ml-1">
-			<a href="https://play.google.com/store/apps/details?id=com.policia.polis&hl=es" target="_blank" class="w-100" title="Alcaldia Dosquebradas | Risaralda">
+			<a href="https://play.google.com/store/apps/details?id=com.policia.polis&hl=es" target="_blank" class="w-100" title="App Polis">
 				<img width="180px" class="img-fluid mx-auto" src="<?php bloginfo('template_directory') ?>/images/polis.png">
 			</a>
 		</div>
 
-		<div class="row text-center pr-0 pl-1 w-100 ml-1 pt-2 mt-1">
-			<a href="http://www.dosquebradas.gov.co/web/index.php/atencion-al-ciudadano/buzon-de-pqrs/buzon-de-pqr-2" target="_blank" class="w-100" title="Alcaldia Dosquebradas | Risaralda">
+		<div class="row text-center pr-0 pl-1 w-100 ml-1 pt-4">
+			<a href="https://www.policia.gov.co/sites/default/files/ley-1801-codigo-nacional-policia-convivencia.pdf" target="_blank" class="w-100" title="Codigo de Policia">
+				<img width="180px" class="img-fluid mx-auto" src="<?php bloginfo('template_directory') ?>/images/codigo-policia.png">
+			</a>
+		</div>
+
+		<div class="row text-center pr-0 pl-1 w-100 ml-1 pt-4 mt-1">
+			<a href="http://www.dosquebradas.gov.co/web/index.php/atencion-al-ciudadano/buzon-de-pqrs/buzon-de-pqr-2" target="_blank" class="w-100" title="PQRS - Alcaldia Dosquebradas | Risaralda">
 				<img width="180px" class="img-fluid mx-auto" src="<?php bloginfo('template_directory') ?>/images/pqrs.png">
 			</a>
 		</div>

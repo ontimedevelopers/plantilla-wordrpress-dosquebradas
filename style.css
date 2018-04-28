@@ -43,6 +43,10 @@ Este tema, así como WordPress, se encuentra bajo la licencia GLP.
 		color: black;
 	}
 
+	p{
+		text-align: justify !important;
+	}
+
 	a:hover{
 		color: #343a40 !important;
 	}
