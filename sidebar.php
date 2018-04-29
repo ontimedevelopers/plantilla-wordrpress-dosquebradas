@@ -35,7 +35,7 @@
 
 		<div class="row text-center pr-0 pl-1 w-100 ml-1 pt-4">
 			<a href="https://www.policia.gov.co/sites/default/files/ley-1801-codigo-nacional-policia-convivencia.pdf" target="_blank" class="w-100" title="Codigo de Policia">
-				<img width="180px" class="img-fluid mx-auto" src="<?php bloginfo('template_directory') ?>/images/codigo-policia.png">
+				<img width="210px" class="img-fluid mx-auto" src="<?php bloginfo('template_directory') ?>/images/codigo-policia.png">
 			</a>
 		</div>
 

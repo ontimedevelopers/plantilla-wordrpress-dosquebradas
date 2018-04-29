@@ -4,7 +4,7 @@ Template Name: Estadisticas
 */
 
 	get_header(  );
-
+ 	wp_reset_query(  );
 	$temp = $wp_query;
 	$wp_query = null;
 
@@ -18,7 +18,10 @@ Template Name: Estadisticas
 			'post_status' => array(
 				'publish',
 			),
-	
+
+			'post_per_page' => 25,
+			'nopaging' => true
+
 		);
 	
 	$wp_query = new WP_Query( $args );
@@ -76,7 +79,6 @@ Template Name: Estadisticas
 									      	</td>
 									    </tr>
 									<?php endwhile; ?>
-
 								<?php endif ?>
 							</tbody>
 						</table>
