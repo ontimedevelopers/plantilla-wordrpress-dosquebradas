@@ -223,6 +223,11 @@ Este tema, así como WordPress, se encuentra bajo la licencia GLP.
 	.dropdown:hover>.dropdown-menu {
 	  display: block;
 	}
+
+	.menu-item-has-children{
+		display: list-item !important;
+	}
+
 /** Post */
 	.excerpt-notice{
 		line-height: .9;

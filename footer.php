@@ -57,7 +57,7 @@
                         'link_before'     => '<i class="fa fa-angle-right" aria-hidden="true"></i> ',
                         'link_after'      => '',
                         'items_wrap'      => '<ul class="nav flex-column mt-3">%3$s</ul>',
-                        'depth'          => 2,
+                        'depth'          => 3,
                         'walker'         => new bootstrap_4_walker_nav_menu()
                       ) );
 

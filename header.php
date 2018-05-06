@@ -58,7 +58,7 @@
                         'link_before'     => '<b>',
                         'link_after'      => '</b>',
                         'items_wrap'      => '<ul id="%1$s" class="navbar-nav ml-auto">%3$s</ul>',
-                        'depth'          => 2,
+                        'depth'          => 3,
                         'walker'         => new bootstrap_4_walker_nav_menu()
                     ) );
 
