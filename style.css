@@ -227,6 +227,15 @@ Este tema, así como WordPress, se encuentra bajo la licencia GLP.
 	.menu-item-has-children{
 		display: list-item !important;
 	}
+	.dropdown-menus{
+		position: relative;
+	}
+
+	.navbar-nav .dropdown-menu {
+		top: 0 !important;
+		left: 100% !important;
+		margin-top: -10px !important;
+	}
 
 /** Post */
 	.excerpt-notice{
@@ -355,3 +364,4 @@ Este tema, así como WordPress, se encuentra bajo la licencia GLP.
 b, strong{
 font-weight: 900 !important;
 }
+
