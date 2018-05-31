@@ -2,11 +2,12 @@
 /*
 Template Name: Estadisticas
 */
-
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1; /* check what page it's on*/
 	get_header(  );
  	wp_reset_query(  );
 	$temp = $wp_query;
 	$wp_query = null;
+
 
 		$args = array(
 	
@@ -19,8 +20,8 @@ Template Name: Estadisticas
 				'publish',
 			),
 
-			'post_per_page' => 25,
-			'nopaging' => true
+			'posts_per_page' => 20,
+    		'paged'=> $paged, 
 
 		);
 	
@@ -82,6 +83,21 @@ Template Name: Estadisticas
 								<?php endif ?>
 							</tbody>
 						</table>
+
+						<nav aria-label="Page navigation example">
+		                    <ul class="pagination justify-content-center">
+
+		                    <?php 
+                				$GLOBALS['wp_query']->max_num_pages = $wp_query->max_num_pages;
+		                        the_posts_pagination( array(
+		                            'mid_size'           => 3,
+		                            'screen_reader_text' => __( ' ' ),
+		                        ) );
+		                    ?>
+
+		                    </ul>
+		                </nav>
+
 				  	</div>
 				</div>
            </div>

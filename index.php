@@ -10,26 +10,27 @@
 
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 	<div class="card mb-3 mt-5 mb-5 border-top-0 border-right-0 border-left-0 rounded-0">
-	                  <a href="<?php the_permalink(); ?>">
-	                  	<?php 
 
-	                  		if ( has_post_thumbnail() ) {
-	                  			the_post_thumbnail('post-notice',  array('class' => 'card-img-top img-fluid' ));
-	                  		}
+                        <a class="ml-2" href="<?php the_permalink(); ?>">
+                            <h5 class="card-title text-dark ml-1s"><?php the_title(); ?></h5>
+                        </a>
+                        <a href="<?php the_permalink(); ?>">
+                        	<?php 
 
-	                  	 ?>
+                        		if ( has_post_thumbnail() ) {
+                        			the_post_thumbnail('post-notice',  array('class' => 'card-img-top img-fluid' ));
+                        		}
 
-	                  </a>
-	                  <div class="card-body pl-0 pr-0">
-	                    <a href="<?php the_permalink(); ?>">
-	                    	<h5 class="card-title text-dark ml-1s"><?php the_title(); ?></h5>
-	                    </a>
-	                    <p class="card-text text-excerpt text-justify"><?php echo get_the_excerpt(); ?></p>
-	                    <p class="card-text">
-	                        <small class="text-muted">Publicado: <?php echo get_the_date(); ?> | </small> 
-	                        <small class="text-muted"><?php comments_number(); ?></small>
-	                    </p>
-	                  </div>
+                        	 ?>
+
+                        </a>
+                        <div class="card-body pl-0 pr-0">
+                            <p class="card-text text-excerpt text-justify"><?php echo get_the_excerpt(); ?></p>
+                            <p class="card-text">
+                                <small class="text-muted">Publicado: <?php echo get_the_date(); ?> | </small> 
+                                <small class="text-muted"><?php comments_number(); ?></small>
+                            </p>
+                        </div>
 	                </div>
                     <?php paginate_links(  ); ?>
                 <?php endwhile; endif; ?>
