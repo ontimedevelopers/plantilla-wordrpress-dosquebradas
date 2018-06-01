@@ -12,7 +12,7 @@
                 	<div class="card mb-3 mt-5 mb-5 border-top-0 border-right-0 border-left-0 rounded-0">
 
                         <a class="ml-2" href="<?php the_permalink(); ?>">
-                            <h5 class="card-title text-dark ml-1s"><?php the_title(); ?></h5>
+                            <h3 class="card-title text-dark ml-1s"><?php the_title(); ?></h3>
                         </a>
                         <a href="<?php the_permalink(); ?>">
                         	<?php 
