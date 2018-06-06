@@ -40,7 +40,7 @@
 		</div>
 
 		<div class="row text-center pr-0 pl-1 w-100 ml-1 pt-4 mt-1">
-			<a href="http://www.dosquebradas.gov.co/web/index.php/atencion-al-ciudadano/buzon-de-pqrs/buzon-de-pqr-2" target="_blank" class="w-100" title="PQRS - Alcaldia Dosquebradas | Risaralda">
+			<a href="http://www.dosquebradas.gov.co/web/index.php/atencion-al-ciudadano/buzon-de-pqr-2" target="_blank" class="w-100" title="PQRS - Alcaldia Dosquebradas | Risaralda">
 				<img width="180px" class="img-fluid mx-auto" src="<?php bloginfo('template_directory') ?>/images/pqrs.png">
 			</a>
 		</div>

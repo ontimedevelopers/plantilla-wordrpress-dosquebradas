@@ -78,7 +78,7 @@
                             Codigo Postal 661001 </br>
                             Teléfonos: (57 6) PBX 3116566. Fax: (57 6) 3320537 </br>
                             Correo electrónico: <a class="text-white" href="emailto:archivo@dosquebradas.gov.co">archivo@dosquebradas.gov.co</a>.<br>
-                            URL: http://www.observatorio-dosquebradas.gov.co
+                            URL: <a class="text-white" href="https://www.observatoriodeviolencia.dosquebradas.gov.co/">https://www.observatoriodeviolencia.dosquebradas.gov.co/</a>
   
                         </address>
                         <address>
