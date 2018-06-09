@@ -36,7 +36,7 @@
                         $custom_logo_id = get_theme_mod( 'custom_logo' );
                         $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
                         if ( has_custom_logo() ) {
-                            echo ' <a href="'.get_home_url( ).'"><img width="236" height="80" src="'.esc_url( $logo[0] ).'"></a>';
+                            echo ' <a href="'.get_home_url( ).'"><img class="logo-img" src="'.esc_url( $logo[0] ).'"></a>';
                         }
 
                         if ( !has_custom_logo()) {  

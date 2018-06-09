@@ -161,6 +161,18 @@ Este tema, así como WordPress, se encuentra bajo la licencia GLP.
 		width: 180px;
 	}
 
+	.logo-img{
+		width: 236px;
+		height: 80px;
+	}
+
+	@media screen and (max-width: 600px){
+		.logo-img{
+			width: 118px;
+			height: 40px;
+		}
+	}
+
 	.navbar-collapse{
 		z-index: 9;
 	}
@@ -223,6 +235,10 @@ Este tema, así como WordPress, se encuentra bajo la licencia GLP.
 	.dropdown:hover>.dropdown-menu {
 	  display: block;
 	}
+	
+	.dropdown-menu {
+	  min-width: 17rem;
+	}
 
 	.menu-item-has-children{
 		display: list-item !important;
@@ -232,9 +248,13 @@ Este tema, así como WordPress, se encuentra bajo la licencia GLP.
 	}
 
 	.navbar-nav .dropdown-menu {
-		top: 0 !important;
-		left: 100% !important;
+		top: 110% !important;
+		/*left: 100% !important;*/
 		margin-top: -10px !important;
+	}
+
+	.dropdown-item{
+		white-space: normal;
 	}
 
 /** Post */
