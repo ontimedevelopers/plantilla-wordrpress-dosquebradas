@@ -27,9 +27,9 @@
 			</a>
 		</div>
 
-		<div class="row text-center pr-0 pl-1 w-100 ml-1">
+		<div class="row text-center pr-0 pl-1 w-100 ml-1 pt-4">
 			<a href="https://play.google.com/store/apps/details?id=com.policia.polis&hl=es" target="_blank" class="w-100" title="App Polis">
-				<img width="180px" class="img-fluid mx-auto" src="<?php bloginfo('template_directory') ?>/images/polis.png">
+				<img width="160px" class="img-fluid mx-auto" src="<?php bloginfo('template_directory') ?>/images/polis.png">
 			</a>
 		</div>
 

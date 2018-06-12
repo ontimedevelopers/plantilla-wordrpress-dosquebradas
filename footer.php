@@ -3,25 +3,25 @@
    <div class="container-fluid p-2 p-md-5 mt-2 mb-2">
         <div class="container">
             <div class="row mx-auto seven-cols">
-                <div class="col-3 col-md-1 mx-auto text-center">
+                <div class="col-3 col-md-1 mx-auto text-center p-0">
                     <img class="img-fluid" width="100px"  src="<?php bloginfo('template_directory') ?>/images/escudo-colombia.png">
                 </div>
-                <div class="col-3 col-md-1 mx-auto text-center">
+                <div class="col-3 col-md-1 mx-auto text-center p-0">
                     <img class="img-fluid" width="100px"  src="<?php bloginfo('template_directory') ?>/images/escudo-dosquebradas.png">
                 </div>
-                <div class="col-3 col-md-1 mx-auto text-center">
+                <div class="col-3 col-md-1 mx-auto text-center p-0">
                     <img class="img-fluid" width="100px"  src="<?php bloginfo('template_directory') ?>/images/logo.png">
                 </div>
-                <div class="col-3 col-md-1 mx-auto text-center">
+                <div class="col-3 col-md-1 mx-auto text-center p-0">
                     <img class="img-fluid" width="100px"  src="<?php bloginfo('template_directory') ?>/images/escudo-ejercito.png">
                 </div>
-                <div class="col-3 col-md-1 mx-auto text-center">
+                <div class="col-3 col-md-1 mx-auto text-center p-0">
                     <img class="img-fluid" width="100px"  src="<?php bloginfo('template_directory') ?>/images/escudo-policia.png">
                 </div>
-                <div class="col-3 col-md-1 mx-auto text-center">
+                <div class="col-3 col-md-1 mx-auto text-center p-0">
                     <img class="img-fluid" width="100px"  src="<?php bloginfo('template_directory') ?>/images/dijin.png">
                 </div>
-                <div class="col-3 col-md-1 mx-auto text-center">
+                <div class="col-3 col-md-1 mx-auto text-center p-0">
                     <img class="img-fluid" width="100px"  src="<?php bloginfo('template_directory') ?>/images/logo-fiscalia.png">
                 </div>
             </div>
@@ -73,11 +73,12 @@
                     <p class="text-white mt-4">
                         <small style="font-size: 17px;">
                         <address>
-                            <strong style="font-size: 17px;">Centro Administrativo Municipal CAM Dosquebradas.</strong><br>
+                            <strong style="font-size: 17px;">Secretaria de Gobierno Dosquebradas.</strong><br>
+                            <strong style="font-size: 17px;">Centro Administrativo Municipal CAM.</strong><br>
                             Dirección Av. Simón Bolívar Nro 36-44<br>
                             Codigo Postal 661001 </br>
-                            Teléfonos: (57 6) PBX 3116566. Fax: (57 6) 3320537 </br>
-                            Correo electrónico: <a class="text-white" href="emailto:archivo@dosquebradas.gov.co">archivo@dosquebradas.gov.co</a>.<br>
+                            Teléfonos: (+57 6) PBX 3116566 Ext: 157 </br>
+                            Correo electrónico: <a class="text-white" href="emailto:observatoriodeviolencia@dosquebradas.gov.co">observatoriodeviolencia@dosquebradas.gov.co</a>.<br>
                             URL: <a class="text-white" href="https://www.observatoriodeviolencia.dosquebradas.gov.co/">observatoriodeviolencia.dosquebradas.gov.co/</a>
   
                         </address>
@@ -101,16 +102,16 @@
                     </h5>
 
                     <div class="mt-4">
-                        <a href="https://facebook.com">
+                        <a href="https://www.facebook.com/AlcaldiadeDosquebradas">
                             <img class="img-fluid mr-4" width="80px;" src="<?php bloginfo('template_directory') ?>/images/facebook.png">
                         </a>
-                        <a href="https://instagram.com">
+                        <a href="https://www.instagram.com/alcaldia_dosquebradas/">
                             <img class="img-fluid mr-4" width="80px;" src="<?php bloginfo('template_directory') ?>/images/instagram.png">
                         </a>
-                        <a href="https://twitter.com">
+                        <a href="https://twitter.com/AlcaldiaDosq?s=09">
                             <img class="img-fluid mr-4" width="80px;" src="<?php bloginfo('template_directory') ?>/images/twitter.png">
                         </a>
-                        <a href="https://youtube.com">
+                        <a href="https://www.youtube.com/channel/UCyIPpEAX0D3z5szgoAijLUg">
                             <img class="img-fluid mr-4" width="80px;" src="<?php bloginfo('template_directory') ?>/images/youtube.png">
                         </a>
                     </div>
@@ -133,7 +134,7 @@
                        <small class="text-white" style="font-size: 16px;">
                            Copyright © <?php echo date('Y'); ?> Municipio de Dosquebradas, Risaralda | Todos los derechos reservados. <br>
                            Diseñado por 
-                           <a class="text-white" href="https://www.dldeveloper.com"><b>dldeveloper.com</b></a>
+                           <a class="text-white" href="https://www.juandleon.com"><b>juandleon.com</b></a>
                            Es un software libre bajo la licencia GNU - General Public License.
                        </small>
                    </p>
