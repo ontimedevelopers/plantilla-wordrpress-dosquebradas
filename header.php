@@ -13,11 +13,11 @@
 
     <style type="text/css">
         
-        .navbar-nav .sub-menu {
+        /*.navbar-nav .sub-menu {
             top: 0 !important;
             left: 100% !important;
             margin-top: -10px !important;
-        }
+        }*/
     </style>
    
 </head>
@@ -64,8 +64,8 @@
                         'echo'            => true,
                         'before'          => '',
                         'after'           => '',
-                        'link_before'     => '<b>',
-                        'link_after'      => '</b>',
+                        'link_before'     => '',
+                        'link_after'      => '',
                         'items_wrap'      => '<ul id="%1$s" class="navbar-nav ml-auto">%3$s</ul>',
                         'depth'          => 3,
                         'walker'         => new bootstrap_4_walker_nav_menu()

@@ -136,7 +136,6 @@
 		wp_enqueue_style( 'style', get_stylesheet_uri() );
 
 		// Fonts
-		wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=EB+Garamond:400,500,600|Forum');
 		wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,500,700');
 		wp_enqueue_style('googleFonts');
 
@@ -171,7 +170,7 @@
 	        $classes[] = 'nav-item';
 	        $classes[] = 'nav-item-' . $item->ID;
 	        if( $depth && $args->walker->has_children ){
-	            $classes[] = 'dropdown-menus';
+	            $classes[] = 'dropdown-submenu';
 	        }
 	        
 	        $class_names =  join(' ', apply_filters('nav_menu_css_class', array_filter( $classes ), $item, $args ) );

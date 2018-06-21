@@ -1,13 +1,14 @@
 ﻿/*
 Theme Name: Dosquebradas
 Author: Juan León
+Author URI: https://juandleon.com
 Description: Dosquebradas es una plantilla versatil para mostrar noticias o entradas de blog, cuenta con varios diseños para páginas estáticas
-Version: 1.0
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 Este tema, así como WordPress, se encuentra bajo la licencia GLP.
-Úsala para compartir algo extraordinario, y compartela
+Úsala para compartir algo extraordinario, y compartela.
 */
 
 /** Utilidades Globales */
@@ -48,7 +49,7 @@ Este tema, así como WordPress, se encuentra bajo la licencia GLP.
 	}
 
 	a:hover{
-		color: #343a40 !important;
+		color: #343a40 ;
 	}
 
 	.breadcrumb-item+.breadcrumb-item::before {
@@ -199,48 +200,170 @@ Este tema, así como WordPress, se encuentra bajo la licencia GLP.
 		}
 	}
 
-	#principalNavbar ul li a{
-		font-family: 'EB Garamond', serif;
-		font-size: 1.1em;
-		/*color: #4FA640;*/
+
+	@media (min-width: 992px){
+		.navbar-expand-lg .navbar-nav .nav-link {
+		  padding-right: .8rem;
+		  padding-left: .8rem;
+		}
+		.navbar-expand-lg .navbar-nav .dropdown-toggle {
+		  padding-right: .5rem;
+		  padding-left: .8rem;
+		}
 	}
 
-	.navbar-light .navbar-nav .nav-link {
-	    color: rgb(0, 0, 0);
+	#principalNavbar ul li a{
+		font-family: 'ceaswfte', serif;
+		font-size: 1.1em;
 	}
+	
+	.navbar-light .navbar-nav .nav-link {
+        color: rgba(80, 80, 80, 0.99);
+	}
+
+	.navbar-light .navbar-nav .nav-link:hover {
+        background-color: #015D82;
+        color: #ffffff;
+    }
+
 	.flex-column li a {
 	    color: #ffffff;
 	    text-decoration: none;
 	    background-color: transparent;
 	    -webkit-text-decoration-skip: objects;
 	}
+
 	.flex-column li {
 	    font-family: 'EB Garamond', serif;
 	    font-size: 18px;
 	    font-weight: 100;
 	    color: white;
 	}
-	.flex-column .dropdown-item{
-	    color: black;
-	}
-	.dropdown-item{
-		color: black;
-	}
+
 	.dropdown-toggle{
 		cursor: pointer;
 	}
+
+	.dropdown-toggle::after {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: .55em;
+        vertical-align: middle;
+        content: "";
+        border-top: .2em solid;
+        border-right: .2em solid transparent;
+        border-bottom: 0;
+        border-left: .2em solid transparent;
+        position: relative;
+        left: -5px;
+    }
+
+    .dropdown-menu{
+        border-radius: 0;
+        padding: 0;
+        margin-top: 0;
+        background-color: #015D82;
+        border: none;
+    }
+
+    .dropdown-item {
+        display: block;
+        width: 100%;
+        padding: .65rem 1.5rem;
+        clear: both;
+        font-weight: 400;
+        color: #ffffff;
+        text-align: inherit;
+        white-space: nowrap;
+        background-color: transparent;
+        border: 0;
+        border-bottom: 1px solid #e8e6e67d;
+    }
+	
+	.dropdown-item:focus, .dropdown-item:hover {
+        color: #015d82;
+        text-decoration: none;
+        background-color: #f8f9fa;
+    }
+
 	a:hover{
 		outline: none !important;
 	}
+
 	.dropdown:hover>.dropdown-menu {
 	  display: block;
 	}
-	
-	.dropdown-menu {
-	  min-width: 17rem;
-	}
 
-	.menu-item-has-children{
+	.dropdown-menu > a.dropdown-item:last-child{
+        border-bottom: none;
+    }
+
+    .dropdown-submenu:focus, 
+    .dropdown-submenu:hover{
+        text-decoration: none;
+        background-color: #F2F2F2;
+  	}
+
+  	.dropdown-submenu:hover>.dropdown-item{
+        color: #015D82;
+    }
+
+    .dropdown-item.active, .dropdown-item:active {
+        color: #fff;
+        text-decoration: none;
+        background-color: #015D82;
+    }
+      
+
+    @media (min-width: 992px){
+        .show{
+          	background-color: #015D82;
+    	}
+
+    	.show .nav-link{
+       		color: #ffffff !important;
+        }
+    }
+
+  	/* Multilevel Navbar Menu */
+	    .dropdown-submenu{
+	      position: relative;
+	    }
+
+	    .dropdown-submenu>.dropdown-menu{
+	      top: 0;
+	      left: 100%;
+	      margin-top: 0px;
+	    }
+
+	    .dropdown-submenu:hover>.dropdown-menu{
+	      display: block;
+	    }
+
+	    .dropdown-submenu>a:after {
+	        display: block;
+	        content: " ";
+	        float: right;
+	        width: 0;
+	        height: 0;
+	        border-color: transparent;
+	        border-style: solid;
+	        border-width: 4px 0 4px 4px;
+	        border-left-color: #ccc;
+	        margin-top: 12px;
+	        margin-right: -10px;
+	    }
+
+	    .dropdown-submenu > .dropdown-item:after{
+	      border-left-color: #fff;
+	    }
+	    .dropdown-submenu:hover > .dropdown-item:after{
+	      border-left-color: #015D82;
+	    }
+  	/* #Multilevel Navbar Menu */
+
+	/*.menu-item-has-children{
 		display: list-item !important;
 	}
 	.dropdown-menus{
@@ -249,13 +372,14 @@ Este tema, así como WordPress, se encuentra bajo la licencia GLP.
 
 	.navbar-nav .dropdown-menu {
 		top: 110% !important;
-		/*left: 100% !important;*/
+		left: 100% !important;
 		margin-top: -10px !important;
 	}
-
-	.dropdown-item{
-		white-space: normal;
-	}
+	
+	.dropdown-item:focus, .dropdown-item:hover{
+		background: #124527;
+		color: white !important;
+	}*/
 
 /** Post */
 	.excerpt-notice{
