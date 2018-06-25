@@ -1,7 +1,7 @@
 
 
 	<!-- Aside -->
-    <div class="col-12 col-lg-3 border border-secondary border-top-0 border-bottom-0 border-right-0 mb-5 mt-md-5 pb-5 pr-md-4" >
+    <div class="col-12 col-lg-3 side-bar mb-5 mt-md-5 pb-5 pr-md-4" >
 
 
     	<!-- Search Form -->

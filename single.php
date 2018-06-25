@@ -6,12 +6,10 @@
            <div class="col-12 col-md-9 content-post mb-md-5 mt-0 p-md-5">
 
            		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                	<h2 class="mt-4 w-100 coment-line"><b>	<?php the_title(); ?> </b></h2>
-           			  <!-- <h4 class="excerpt-notice">
-	                    <small class="text-muted">
-                        <?php echo get_the_excerpt(); ?>
-                      </small>
-	                </h4> -->
+                	<h2 class="mt-4 w-100 coment-line">
+                    <?php the_title(); ?>
+                  </h2>
+           			 
 
 	                <h5 class="mb-4">
 	                	<small class="text-muted">

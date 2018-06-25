@@ -15,13 +15,13 @@
                 <div class="col-3 col-md-1 mx-auto text-center p-0">
                     <img class="img-fluid" width="100px"  src="<?php bloginfo('template_directory') ?>/images/escudo-ejercito.png">
                 </div>
-                <div class="col-3 col-md-1 mx-auto text-center p-0">
+                <div class="col-3 col-md-1 mt-3 mt-md-0 mx-auto text-center p-0">
                     <img class="img-fluid" width="100px"  src="<?php bloginfo('template_directory') ?>/images/escudo-policia.png">
                 </div>
-                <div class="col-3 col-md-1 mx-auto text-center p-0">
+                <div class="col-3 col-md-1 mt-3 mt-md-0 mx-auto text-center p-0">
                     <img class="img-fluid" width="100px"  src="<?php bloginfo('template_directory') ?>/images/dijin.png">
                 </div>
-                <div class="col-3 col-md-1 mx-auto text-center p-0">
+                <div class="col-3 col-md-1 mt-3 mt-md-0 mx-auto text-center p-0">
                     <img class="img-fluid" width="100px"  src="<?php bloginfo('template_directory') ?>/images/logo-fiscalia.png">
                 </div>
             </div>

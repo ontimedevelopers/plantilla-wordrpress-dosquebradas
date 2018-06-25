@@ -96,6 +96,34 @@
 			);
 
 			/**
+		     * Add classes to img 
+		     */
+			function add_responsive_class_content($content){
+		        $content = mb_convert_encoding($content, 'HTML-ENTITIES', "UTF-8");
+			        if (!empty($content)) {
+			        $document = new DOMDocument();
+			        libxml_use_internal_errors(true);
+			        $document->loadHTML(utf8_decode($content),LIBXML_HTML_NOIMPLIED);
+
+			        $imgs = $document->getElementsByTagName('img');
+			        foreach ($imgs as $img) {           
+			           $existing_class = $img->getAttribute('class');
+			           $img->setAttribute('class', "img-fluid $existing_class");
+			        }
+
+			        $html = $document->saveHTML();
+			        $html = str_replace(”,”,$html);
+			        return $html;
+		        }
+
+		        else {
+		        	return $content;  
+	    		}
+			}
+
+			add_filter('the_content', 'add_responsive_class_content');
+
+			/**
 		     * Add support sidebar widgets
 		     */
 			add_action( 'widgets_init', 'my_register_sidebars' );

@@ -11,14 +11,14 @@
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 	<div class="card mb-3 mt-5 mb-5 border-top-0 border-right-0 border-left-0 rounded-0">
 
-                        <a class="ml-2" href="<?php the_permalink(); ?>">
+                        <a class="" href="<?php the_permalink(); ?>">
                             <h3 class="card-title text-dark ml-1s"><?php the_title(); ?></h3>
                         </a>
                         <a href="<?php the_permalink(); ?>">
                         	<?php 
 
                         		if ( has_post_thumbnail() ) {
-                        			the_post_thumbnail('post-notice',  array('class' => 'card-img-top img-fluid' ));
+                        			the_post_thumbnail('large',  array('class' => 'card-img-top img-fluid' ));
                         		}
 
                         	 ?>

@@ -10,16 +10,7 @@
     <![endif]-->
 
     <?php wp_head(); ?>
-
-    <style type="text/css">
-        
-        /*.navbar-nav .sub-menu {
-            top: 0 !important;
-            left: 100% !important;
-            margin-top: -10px !important;
-        }*/
-    </style>
-   
+    
 </head>
 <body style="">
 
@@ -36,7 +27,7 @@
                         $custom_logo_id = get_theme_mod( 'custom_logo' );
                         $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
                         if ( has_custom_logo() ) {
-                            echo ' <a href="'.get_home_url( ).'"><img class="logo-img" src="'.esc_url( $logo[0] ).'"></a>';
+                            echo ' <a href="'.get_home_url( ).'"><img class="logo-img" width="160px" src="'.esc_url( $logo[0] ).'"></a>';
                         }
 
                         if ( !has_custom_logo()) {  

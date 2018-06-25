@@ -12,10 +12,15 @@ Este tema, así como WordPress, se encuentra bajo la licencia GLP.
 */
 
 /** Utilidades Globales */
-
+		
+	@font-face {
+	  font-family: 'ceaswfte';
+	  src: url('fonts/ceaswfte.ttf');
+	  font-weight: normal;
+	}
 
 	body{
-		font-family: 'EB Garamond', serif;
+		font-family: 'ceaswfte', serif;
 	}
 
 	button {
@@ -27,18 +32,28 @@ Este tema, así como WordPress, se encuentra bajo la licencia GLP.
 	}
 
 	h1, h2, h3, h4, h5, h6{
-		font-family: 'Forum', cursive;	
-		font-weight: 600;
+		font-family: 'Open-Sans';	
+		font-weight: 400;
+	}
+
+	h2, h3{
+		font-size: 1.7rem;
 	}
 
 	h3 small,		
 	h5 small{		
-		font-family: 'Forum', cursive;	
+		font-family: 'Open-Sans';	
 		font-weight: 300;
 	}
 
+	@media (max-width: 748px){
+		h2, h3{
+			font-size: 1.4rem;
+		}
+	}
+
 	p, ul li{
-		font-family: 'EB Garamond', serif;
+		font-family: 'ceaswfte';
 		font-size: 18px;
 		font-weight: 100;
 		color: black;
@@ -179,7 +194,7 @@ Este tema, así como WordPress, se encuentra bajo la licencia GLP.
 	}
 
 	.nav-link b{
-		font-family: 'Forum', cursive;	
+		font-family: 'Open-Sans', cursive;	
 	}
 
 	.nav-link:hover{
@@ -214,7 +229,7 @@ Este tema, así como WordPress, se encuentra bajo la licencia GLP.
 
 	#principalNavbar ul li a{
 		font-family: 'ceaswfte', serif;
-		font-size: 1.1em;
+		font-size: .95em;
 	}
 	
 	.navbar-light .navbar-nav .nav-link {
@@ -467,6 +482,25 @@ Este tema, así como WordPress, se encuentra bajo la licencia GLP.
 	}
 	/*3b99ff*/
 
+	/* embed Youtube */
+	.embed-youtube {
+		position: relative;
+		padding-bottom: 56.25%;
+		padding-top: 30px;
+		height: 0;
+		overflow: hidden;
+	}
+
+	.embed-youtube iframe,  
+	.embed-youtube object,  
+	.embed-youtube embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
 /**
 * Sidebar
 */
@@ -474,6 +508,12 @@ Este tema, así como WordPress, se encuentra bajo la licencia GLP.
 	table,
 	#wp-calendar{
 		width: 100%;
+	}
+
+	@media (min-width: 992px){
+		.side-bar{
+			border-left: 1px solid #868e96;
+		}
 	}
 
 
