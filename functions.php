@@ -147,6 +147,18 @@
 			    
 			    /* Repeat register_sidebar() code for additional sidebars. */
 			}
+
+			/**
+		     * Exclude estadisticas post type from search results
+		     */
+			function search_filter($query) {
+				if ($query->is_search) {
+					$query->set('post_type', 'post');
+					$query->set('post_type', 'page');
+				}
+				return $query;
+			}
+			add_filter('pre_get_posts','search_filter');
 		}
 
 	endif; // wp_curso_setup
@@ -231,6 +243,8 @@
 	Register Navbar
 	*/
 	register_nav_menu('navbar', __('Navbar', 'dosquebradas'));
+
+
 
 
 /*******************************************************************************/
