@@ -149,12 +149,18 @@
 			}
 
 			/**
+		     * Add excerpt to pages
+		     */
+			add_post_type_support('page', 'excerpt');
+
+			/**
 		     * Exclude estadisticas post type from search results
 		     */
 			function search_filter($query) {
 				if ($query->is_search) {
 					$query->set('post_type', 'post');
 					$query->set('post_type', 'page');
+					$query->set('posts_per_page', '10');
 				}
 				return $query;
 			}
