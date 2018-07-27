@@ -108,4 +108,4 @@ Template Name: Estadisticas
    <!-- #Content -->
 
 
-<?php get_footer(); ?>
+<?php get_footer(  ); ?>

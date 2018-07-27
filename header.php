@@ -45,22 +45,26 @@
 
                 <?php 
 
-                    wp_nav_menu( array(
-                        'theme_location'  => 'superior',
-                        'container'       => 'div',
-                        'container_class' => 'collapse bg-none navbar-collapse w-100',
-                        'container_id'    => 'principalNavbar',
-                        'menu_class'      => 'nav-item bg-none mr-3 pt-3 pb-2',
-                        'menu_id'         => '',
-                        'echo'            => true,
-                        'before'          => '',
-                        'after'           => '',
-                        'link_before'     => '',
-                        'link_after'      => '',
-                        'items_wrap'      => '<ul id="%1$s" class="navbar-nav ml-auto">%3$s</ul>',
-                        'depth'          => 3,
-                        'walker'         => new bootstrap_4_walker_nav_menu()
-                    ) );
+                    if ( has_nav_menu( 'superior' ) ) {
+                        
+                        wp_nav_menu( array(
+                            'theme_location'  => 'superior',
+                            'container'       => 'div',
+                            'container_class' => 'collapse bg-none navbar-collapse w-100',
+                            'container_id'    => 'principalNavbar',
+                            'menu_class'      => 'nav-item bg-none mr-3 pt-3 pb-2',
+                            'menu_id'         => '',
+                            'echo'            => true,
+                            'before'          => '',
+                            'after'           => '',
+                            'link_before'     => '',
+                            'link_after'      => '',
+                            'items_wrap'      => '<ul id="%1$s" class="navbar-nav ml-auto">%3$s</ul>',
+                            'depth'           => 3,
+                            'walker'          => new bootstrap_4_walker_nav_menu()
+                        ) );
+                        
+                    }
 
                 ?>
 
