@@ -1,64 +1,63 @@
-<?php get_header( ); ?>
+<?php echo get_header( ); ?>
+  
+  <!-- Post -->
+    <div class="container mt-2 mt-sm-3 mt-lg-5" id="content">
+      <div class="row">
 
-	<!-- Contendo -->
-	<div class="container border mt-5 bg-white">
-        <div class="row">
-            <!-- Noticias -->
-            <div class="col-12 col-lg-9 mb-md-5 mt-0 p-md-5">
-                <h2 class="mt-4 w-100 coment-line"><b>Noticias Recientes</b></h2>
-
+        <div class="col-lg-9 post-column d-flex align-items-stretch">
+          <div class="row">
+            <div class="col bg-white float-column px-3 px-md-5 py-5">
+                <h3 class="principal-title">NOTICIAS RECIENTES</h3>
+                <hr class="line-title">
 
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                	<div class="card mb-3 mt-5 mb-5 border-top-0 border-right-0 border-left-0 rounded-0">
+                  <div class="card text-center mt-5">
+                    <div class="card-header border-0 p-0 text-left">
+                      <a href="<?php the_permalink(); ?>">
+                        <h4 class="m-0"><?php the_title(); ?></h4>
+                      </a>
+                      <span>
+                        <i class="far fa-calendar-alt ml-1"></i> Publicado el <?php echo get_the_date(); ?>
+                      </span> | 
+                      <span>
+                        <i class="far fa-comments"></i> <?php comments_number(); ?>
+                      </span>
+                    </div>
+                    <a  href="<?php the_permalink(); ?>">
+                        <?php 
 
-                        <a class="" href="<?php the_permalink(); ?>">
-                            <h3 class="card-title text-dark ml-1s"><?php the_title(); ?></h3>
-                        </a>
-                        <a href="<?php the_permalink(); ?>">
-                        	<?php 
+                            if ( has_post_thumbnail() ) {
+                                the_post_thumbnail('large',  array('class' => 'card-img-top img-fluid mt-3' ));
+                            }
 
-                        		if ( has_post_thumbnail() ) {
-                        			the_post_thumbnail('large',  array('class' => 'card-img-top img-fluid' ));
-                        		}
-
-                        	 ?>
-
-                        </a>
-                        <div class="card-body pl-0 pr-0">
-                            <p class="card-text text-excerpt text-justify"><?php echo get_the_excerpt(); ?></p>
-                            <p class="card-text">
-                                <small class="text-muted">Publicado: <?php echo get_the_date(); ?> | </small> 
-                                <small class="text-muted"><?php comments_number(); ?></small>
-                            </p>
-                        </div>
-	                </div>
-                    <?php paginate_links(  ); ?>
+                         ?>
+                    </a>
+                    <div class="card-body px-0 px-md-2 pt-3 pb-2">
+                      <p class="card-text">
+                       <?php echo get_the_excerpt(); ?>
+                      </p>
+                      <a href="<?php the_permalink(); ?>" class="btn btn-primary mb-2">
+                        LEER MÁS
+                      </a>
+                    </div>
+                  </div>
                 <?php endwhile; endif; ?>
+                <?php 
+                    if (function_exists("fellowtuts_wpbs_pagination"))
+                      {
+                          fellowtuts_wpbs_pagination();
+                          //fellowtuts_wpbs_pagination($the_query->max_num_pages);
+                      }
+                ?>
 
-
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center">
-
-                    <?php 
-                        the_posts_pagination( array(
-                            'mid_size'           => 2,
-                            'screen_reader_text' => __( ' ' ),
-                        ) );
-                    ?>
-
-                    </ul>
-                </nav>
-
-            </div>
-            <!-- #Noticias -->
-
-            
-            <?php get_sidebar(); ?>
-            
+            </div> 
+          </div>
         </div>
-   </div>
-	<!-- Contendo -->
 
+        <?php get_sidebar(); ?>
+            
+      </div> <!-- Row -->
+    </div>
+  <!-- Post --> 
 
-
-<?php get_footer( ); ?>
+<?php echo get_footer( ); ?>

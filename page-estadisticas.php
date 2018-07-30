@@ -30,82 +30,81 @@ Template Name: Estadisticas
 ?>
 
 
-  <!-- Content -->
-   <div class="container border mt-5 bg-white">
-       <div class="row">
-           <div class="col-12 col-md-9 mb-5 mt-0 p-md-5">
-                <h3 class="mt-4 w-100 coment-line mb-3">Estadísticas</h3>
+  <!-- Post -->
+    <div class="container mt-2 mt-sm-3 mt-lg-5" id="content">
+      <div class="row">
 
-                <div class="card rounded-0 border-0 mt-5 pt-3">
-				  	<div class="card-header bg-dark text-white">
-				    	Consulta de manera cronológica los balances delictivos y operativos del municipio de Dosquebradas
-				  	</div>
-				  	<div class="card-body pr-0 pl-0">
-				    	<table class="table table-bordered">
-						  	<caption>Estadisticas delitos en Dosquebradas - Risaralda</caption>
-							<tbody>
+        <div class="col-lg-9 post-column d-flex align-items-stretch">
+          <div class="row">
+            <div class="col bg-white float-column px-3 px-md-5 py-5" id="estadisticas">
+              
+              <h3 class="principal-title">ESTADISTICAS</h3>
+              <hr class="line-title">
 
-								<?php if ( $wp_query->have_posts() ): ?>
+              <h6 class="description mt-3 mb-4">
+                Consulta de manera cronológica los balances delictivos y operativos del municipio de Dosquebradas
+              </h6>
+              
+					<?php if ( $wp_query->have_posts() ): ?>
 
-									<?php while ( have_posts() ) : the_post(); ?>
+						<?php while ( have_posts() ) : the_post(); ?>
 
-										<?php 
-											$extension = substr(get_field('documento'), -4);
-											if ( $extension == '.xls' || $extension == 'xlsx' ) {
-												$img = '/images/xls.png';
-											}else{
-												$img = '/images/pdf.png';
-											}
-										?>
+							<?php 
+								$extension = substr(get_field('documento'), -4);
+								if ( $extension == '.xls' || $extension == 'xlsx' ) {
+									$img = '/images/format-xls.png';
+									$alt = 'Excel';
+								}else{
+									$img = '/images/format-pdf.png';
+									$alt = 'pdf';
+								}
+							?>
+							
+		              <div class="media border d-flex my-2">
+		                <img class="mr-3 align-self-center" src="<?php bloginfo('template_directory') ?><?php echo $img; ?>" width="50px" alt="<?php echo $alt; ?>">
+		                <div class="media-body d-flex">
+		                  <div class="flex-grow-1 align-self-center">
+		                    <h5 class="my-0"><?php the_field('titulo'); ?></h5>
+		                    <p class="my-0 text-muted">Fecha: <?php echo get_the_date( ); ?></p>
+		                  </div>
+		                  <div class="download">
+		                    <a target="_blank" href="<?php the_field('documento'); ?>" type="button" class="btn h-100 px-4">
+		                      <i class="fas fa-download"></i> <br>
+		                      <span>Descargar</span>
+		                    </a>
+		                  </div>
+		                </div>
+		              </div>
 
-									    <tr>
-									      	<td class="align-middle p-1">
-									      		<div class="media">
-												  <img class="align-self-center mr-3 img-fluid" width="40" src="<?php bloginfo('template_directory') ?><?php echo $img; ?>" alt="<?php echo $extension; ?>">
-												  <div class="media-body pt-2">
-												    <span class="align-middle">
-												    	<?php the_field('titulo'); ?>
-												    </span>
-												  </div>
-												</div>
-									      	</td>
-									      	<td class="align-middle text-center p-1">
-									      		<?php echo get_the_date( ); ?>
-									      	</td>
-									      	<td class="text-center p-1">
-									      		<a target="_blank" class="text-success" href="<?php the_field('documento'); ?>">
-									      			<i class="fa fa-download" aria-hidden="true"></i>
-									      			<br>Descargar
-									      		</a>
-									      	</td>
-									    </tr>
-									<?php endwhile; ?>
-								<?php endif ?>
-							</tbody>
-						</table>
+						<?php endwhile; ?>
+					<?php endif ?>
+              
+              
+              <!-- Pagination -->
+                <?php 
 
-						<nav aria-label="Page navigation example">
-		                    <ul class="pagination justify-content-center">
 
-		                    <?php 
-                				$GLOBALS['wp_query']->max_num_pages = $wp_query->max_num_pages;
-		                        the_posts_pagination( array(
-		                            'mid_size'           => 3,
-		                            'screen_reader_text' => __( ' ' ),
-		                        ) );
-		                    ?>
+              		if (function_exists("fellowtuts_wpbs_pagination"))
+						{
+						    fellowtuts_wpbs_pagination();
+						    //fellowtuts_wpbs_pagination($the_query->max_num_pages);
+						}
 
-		                    </ul>
-		                </nav>
+						wp_reset_postdata();
+						
+                ?>
+              <!-- Pagination -->
 
-				  	</div>
-				</div>
-           </div>
-				  	<?php get_sidebar(  ); ?>
-           
-       </div>
-   </div>
-   <!-- #Content -->
+
+            </div> 
+          </div>
+        </div>
+        
+        <?php get_sidebar(); ?>
+
+      </div> <!-- Row -->
+    </div>
+  <!-- Post -->
 
 
 <?php get_footer(  ); ?>

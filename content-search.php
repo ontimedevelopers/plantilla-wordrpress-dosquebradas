@@ -9,16 +9,19 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-	<header class="entry-header mt-5">
-		<?php the_title( sprintf( '<h5 class="entry-title"><a href="%s" class="text-success" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h5>' ); ?>
-	</header><!-- .entry-header -->
-
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-
-	<hr>
-
-</article><!-- #post-## -->
+  <div id="post-<?php the_ID(); ?>"  class="media my-4" <?php post_class(); ?>>
+  	<?php 
+			if ( has_post_thumbnail() ) {
+  			the_post_thumbnail('medium',  array('class' => 'img-fluid mr-2', 'width' => '300px' ));
+  		}
+		?>
+    <div class="media-body">
+      <h5 class="mt-0"><?php the_title(); ?></h5>
+      <p>
+        <?php the_excerpt(); ?>
+      </p>
+      <div class="text-right">
+        <a href="<?php the_permalink(); ?>" type="button" class="btn">LEER MÁS</a>
+      </div>
+    </div>
+  </div>

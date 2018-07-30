@@ -1,53 +1,54 @@
 <?php get_header(); ?>
-	
-	<!-- Contendo -->
-	<div class="container border mt-5 bg-white">
-        <div class="row">
-			
-            <div class="col-12 col-lg-9 mb-5 mt-0 p-md-5">
-            	<h2 class="mt-4 w-100 coment-line">
-            		<b>
-            			<?php 
-            				printf( __( 'Resultados de Busqueda para: %s', 'dosquebradas' ), get_search_query() );
-            			?>
-            		</b>
-            	</h2>
 
-				<?php 
 
-					if ( have_posts() ): 
+  <!-- Post -->
+    <div class="container mt-2 mt-sm-3 mt-lg-5" id="content">
+      <div class="row">
 
-						while ( have_posts() ) : the_post(); 
-                            get_template_part( 'content', 'search' );
-						endwhile;
+        <div class="col-lg-9 post-column d-flex align-items-stretch">
+          <div class="row">
+            <div class="col bg-white float-column px-3 px-md-5 py-5" id="search_post">
+              
+              <h3 class="principal-title">RESULTADOS DE BUSQUEDA</h3>
+              <hr class="line-title">
 
-					else: 
-				?>
+              <p class="text-muted text-right searched mb-3">
+                <?php 
+                  printf( __( 'Resultados para: "%s"', 'dosquebradas' ), get_search_query() );
+              ?>
+              </p>
 
-                	<p class="text-justify mt-5">
-                		No se han encontrado resultados
-                	</p>
-                	
-                <?php endif; ?>
+              <?php 
+                if ( have_posts() ): 
+                    while ( have_posts() ) : the_post(); 
+                      get_template_part( 'content', 'search' );
+                    endwhile;
+                else: 
+            ?>
 
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center mt-5">
+                <p class="text-justify mt-5">
+                    No se han encontrado resultados
+                </p>
+                
+              <?php endif; ?>
 
-                    <?php 
-                        the_posts_pagination( array(
-                            'mid_size'           => 2,
-                            'screen_reader_text' => __( ' ' ),
-                        ) );
-                    ?>
+              <?php 
+                if (function_exists("fellowtuts_wpbs_pagination"))
+                  {
+                    fellowtuts_wpbs_pagination();
+                    //fellowtuts_wpbs_pagination($the_query->max_num_pages);
+                  }
+              ?>
 
-                    </ul>
-                </nav>
-
-            </div>
-
-            <?php get_sidebar(); ?>
-
+            </div> 
+          </div>
         </div>
+        
+        <?php get_sidebar(); ?>
+        
+      </div> <!-- Row -->
     </div>
+  <!-- Post -->
+
 
 <?php get_footer(); ?>

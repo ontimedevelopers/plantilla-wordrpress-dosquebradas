@@ -13,103 +13,138 @@
     
 </head>
 <body style="">
+  
+  <!-- Header -->
+    <div class="container-fluid bg-white py-3" id="header">
+      <div class="container container-nav">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+          <!-- Custom Logo -->
+          <?php 
+            if ( function_exists( 'the_custom_logo' ) ) {
+              $custom_logo_id = get_theme_mod( 'custom_logo' );
+              $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+              if ( has_custom_logo() ) {
+                  $logo_img = '';
+                  $logo_img .= '<a class="navbar-brand" href="'.get_home_url(  ).'">';
+                  $logo_img .= '<img class="img-fluid" src="'.esc_url( $logo[0] ).'">';
+                  $logo_img .= '</a>';
+                  echo $logo_img;
+              }else {  
+                  echo 'SIN LOGO';
+              }
+            } 
+          ?>
+          <!-- #Custom Logo -->
+
+          <?php 
+            if ( has_nav_menu( 'superior' ) ) {
+                
+                wp_nav_menu( array(
+                    'theme_location'  => 'superior',
+                    'container'       => 'div',
+                    'container_class' => 'collapse navbar-collapse',
+                    'container_id'    => '',
+                    'menu_class'      => '',
+                    'menu_id'         => '',
+                    'echo'            => true,
+                    'before'          => '',
+                    'after'           => '',
+                    'link_before'     => '',
+                    'link_after'      => '',
+                    'items_wrap'      => '<ul id="%1$s" class="navbar-nav ml-auto">%3$s</ul>',
+                    'depth'           => 0,
+                    'walker'          => new bootstrap_4_walker_nav_menu()
+                ) );
+            }
+          ?>
+
+          <?php 
+            if ( has_nav_menu( 'movil' ) ) {
+          ?>
+              <!-- Hamburguer button -->
+              <button class="navbar-toggler border-0" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="my-2">
+                  <div class="s-menu"></div>
+                </div>
+                <div class="my-2">
+                  <div class="s-menu w-50"></div>
+                </div>
+                <div class="my-2">
+                  <div class="s-menu"></div>
+                </div>
+              </button>
+              <!-- #Hamburguer button -->
+
+              <?php    
+                wp_nav_menu( array(
+                  'theme_location'  => 'movil',
+                  'container'       => 'div',
+                  'container_class' => is_admin_bar_showing() ? 'sidenav sidenav-to-admin' : 'sidenav',
+                  'container_id'    => 'mobile_menu',
+                  'menu_class'      => '',
+                  'menu_id'         => '',
+                  'echo'            => true,
+                  'before'          => '',
+                  'after'           => '',
+                  'link_before'     => '',
+                  'link_after'      => '',
+                  'items_wrap'      => '<h3 class="text-center text-white mt-2 mb-4">MENU</h3> %3$s',
+                  'depth'           => 0,
+                  'walker'          => new bootstrap_4_walker_side_nav_menu()
+                ) );
+          }
+              ?>
+
+        </nav>
+      </div>
+    </div>
+  <!-- #Header -->
+  
 
 
+    <?php if ( is_home() && is_front_page() && is_array(get_slider_array()) && count(get_slider_array()) > 0 ): ?>   
+      
+      <!-- Slider -->
+      <div id="sliderPrincipal" class="carousel slide" data-ride="carousel">
 
-   <!-- Pincipal Nav -->
-   <div class="container-fluid container-navbar bg-white p-3 mb-0">
-        <div class="container">            
-            <nav class="navbar navbar-expand-lg navbar-light bg-white p-0">
+        <ol class="carousel-indicators">
+          <?php $c = 0; foreach (get_slider_array() as $value): ?>
+            <?php if ($c == 0): ?>
+              <li data-target="#sliderPrincipal" data-slide-to="<?php echo $c; ?>" class="active"></li>
+            <?php else: ?>
+              <li data-target="#sliderPrincipal" data-slide-to="<?php echo $c; ?>"></li>
+            <?php endif ?>
+          <?php $c++; endforeach ?>
+        </ol>
 
-                <!-- Custom Logo -->
-                <?php 
-                    if ( function_exists( 'the_custom_logo' ) ) {
-                        $custom_logo_id = get_theme_mod( 'custom_logo' );
-                        $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-                        if ( has_custom_logo() ) {
-                            echo ' <a href="'.get_home_url( ).'"><img class="logo-img" width="160px" src="'.esc_url( $logo[0] ).'"></a>';
-                        }
+        <div class="carousel-inner">
 
-                        if ( !has_custom_logo()) {  
-                            echo 'NO HAS ASIGNADO LOGO';
-                        }
-                    } 
-                ?>
-                <!-- #Custom Logo -->
+          <?php $c = 0; foreach (get_slider_array() as $value): ?>
+            
+            <?php if ($c == 0): ?>
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="<?php echo $value; ?>" alt="First slide">
+              </div>
+            <?php else: ?>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="<?php echo $value; ?>" alt="First slide">
+              </div>
+            <?php endif ?>
 
+          <?php $c++; endforeach ?>
 
-                <button class="navbar-toggler border-0 mt-3 mb-3 text-dark" type="button" data-toggle="collapse" data-target="#principalNavbar" aria-controls="principalNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon text-dark"></span>
-                </button>
-
-
-                <?php 
-
-                    if ( has_nav_menu( 'superior' ) ) {
-                        
-                        wp_nav_menu( array(
-                            'theme_location'  => 'superior',
-                            'container'       => 'div',
-                            'container_class' => 'collapse bg-none navbar-collapse w-100',
-                            'container_id'    => 'principalNavbar',
-                            'menu_class'      => 'nav-item bg-none mr-3 pt-3 pb-2',
-                            'menu_id'         => '',
-                            'echo'            => true,
-                            'before'          => '',
-                            'after'           => '',
-                            'link_before'     => '',
-                            'link_after'      => '',
-                            'items_wrap'      => '<ul id="%1$s" class="navbar-nav ml-auto">%3$s</ul>',
-                            'depth'           => 3,
-                            'walker'          => new bootstrap_4_walker_nav_menu()
-                        ) );
-                        
-                    }
-
-                ?>
-
-            </nav>
+          <a class="carousel-control-prev" href="#sliderPrincipal" role="button" data-slide="prev">
+            <i class="fas fa-2x fa-angle-double-left"></i>
+            <span class="sr-only">Anterior</span>
+          </a>
+          <a class="carousel-control-next" href="#sliderPrincipal" role="button" data-slide="next">
+            <i class="fas fa-2x fa-angle-double-right"></i>
+            <span class="sr-only">Siguiente</span>
+          </a>
+          
         </div>
-   </div>
-   <!-- #Pincipal Nav -->
 
-
-    <?php if ( is_home() && is_front_page() ): ?>        
-       <!-- Carrousel -->
-       <div id="carousel_principal" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#carousel_principal" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel_principal" data-slide-to="1"></li>
-                <li data-target="#carousel_principal" data-slide-to="2"></li>
-            </ol>
-            <!-- #Indicators -->
-
-            <!-- Slider Images -->
-            <div class="carousel-inner">
-                <div class="carousel-item active parallax">
-                    <img width="100%" src="<?php echo get_template_directory_uri().'/images/slider1.jpg' ?>">
-                </div>
-                <div class="carousel-item parallax">
-                    <img width="100%" src="<?php echo get_template_directory_uri().'/images/slider2.jpg' ?>">
-                </div>
-                <div class="carousel-item parallax">
-                    <img width="100%" src="<?php echo get_template_directory_uri().'/images/slider3.jpg' ?>">
-                </div>
-            </div>
-            <!-- #Slider Images -->
-
-            <!-- Controls -->
-            <a class="carousel-control-prev" href="#carousel_principal" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon d-none d-md-block" aria-hidden="true"></span>
-                <span class="sr-only">Anterior</span>
-            </a>
-            <a class="carousel-control-next hidden-lg" href="#carousel_principal" role="button" data-slide="next">
-                <span class="carousel-control-next-icon  d-none d-md-block" aria-hidden="true"></span>
-                <span class="sr-only">Siguiente</span>
-            </a>
-            <!-- #Controls -->
-        </div>
-       <!-- #Carrousel -->
+      </div>
+    <!-- #Slider -->
 
     <?php endif ?>

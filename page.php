@@ -1,22 +1,35 @@
 <?php get_header(); ?>
 
-	<!-- Content -->
-   	<div class="container border mt-5 bg-white">
-       	<div class="row">
-           	<div class="col-12 col-md-9 mb-5 mt-0 p-md-5">
+    <div class="container mt-2 mt-sm-3 mt-lg-5" id="content">
+      <div class="row">
 
-           		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                	<h3 class="w-100 coment-line mb-5 mt-4"><?php the_title(); ?></h3>
-                	<p class="text-justify"><?php the_content(); ?></p>
-           		<?php endwhile; ?>
-           		<?php endif; ?>
+        <div class="col-lg-9 post-column ob-page d-flex align-items-stretch">
+          <div class="row w-100">
+            <div class="col bg-white float-column px-2 px-md-5 py-5" id="the_post">
 
-           	</div>
+              <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-           	<?php get_sidebar(  ); ?>
+                  <div class="card text-center the-post-card mb-5">
+                    <div class="card-header border-0">
+                      <h2 class="mb-0 text-uppercase">
+                        <?php the_title(); ?>
+                      </h2>
+                    </div>
+                    <div class="card-body text-left px-0">
+                      <?php the_content(); ?>
+                     </div>
+                  </div>
+              <?php endwhile; ?>
+              <?php endif; ?>
 
-       	</div>
-   </div>
+            </div> 
+          </div>
+        </div>
+
+        <?php get_sidebar(  ); ?>
+
+      </div> <!-- Row -->
+    </div>
    <!-- #Content -->
 
 
