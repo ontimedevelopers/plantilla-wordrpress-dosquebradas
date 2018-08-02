@@ -67,7 +67,7 @@ Template Name: Estadisticas
 		                    <h5 class="my-0"><?php the_field('titulo'); ?></h5>
 		                    <p class="my-0 text-muted">Fecha: <?php echo get_the_date( ); ?></p>
 		                  </div>
-		                  <div class="download">
+		                  <div class="download align-slef-center">
 		                    <a target="_blank" href="<?php the_field('documento'); ?>" type="button" class="btn h-100 px-4">
 		                      <i class="fas fa-download"></i> <br>
 		                      <span>Descargar</span>

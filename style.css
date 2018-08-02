@@ -670,6 +670,16 @@ Este tema, así como WordPress, se encuentra bajo la licencia GLP.
     }
 
     /*Coments*/
+      #coments .coment-form-container .flex-adjust{
+        width: 93px;
+      }
+
+      @media (max-width: 768px){
+        #coments .coment-form-container .flex-adjust{
+          width: 0;
+        }
+      }
+
       #coments .media .media-body h5{
         font-size: 1.1em;
         font-weight: 700;
@@ -723,6 +733,13 @@ Este tema, así como WordPress, se encuentra bajo la licencia GLP.
         line-height: .4;
       }
 
+      @media (max-width: 768px){
+        #coments .coment-by h6,
+        #coments .coment-by p small{
+          line-height: 1;
+        }
+      }
+
       #coments .coment-by p small{
         font-size: .7em;
       }
@@ -738,7 +755,7 @@ Este tema, así como WordPress, se encuentra bajo la licencia GLP.
  
     @media screen and (max-width: 575px) {
       .ft-wpbs .page-link {
-        font-size: .7rem;
+        font-size: .95rem;
         padding: .3rem .45rem;
       }
     }

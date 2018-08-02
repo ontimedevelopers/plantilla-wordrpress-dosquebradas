@@ -186,11 +186,11 @@
 				
 				if(1 != $pages)
 				{
-				  echo '<nav class="mt-5" aria-label="Page navigation" role="navigation">';
-			    echo '<span class="sr-only">Page navigation</span>';
-			    echo '<ul class="pagination justify-content-center ft-wpbs">';
+				  	echo '<nav class="mt-5" aria-label="Page navigation" role="navigation">';
+			    	echo '<span class="sr-only">Page navigation</span>';
+			   		echo '<ul class="pagination justify-content-center ft-wpbs">';
 					
-			    echo '<li class="page-item disabled hidden-md-down d-none d-lg-block"><span class="page-link">Página '.$paged.' de '.$pages.'</span></li>';
+			    	echo '<li class="page-item disabled hidden-md-down d-none d-lg-block"><span class="page-link">Página '.$paged.' de '.$pages.'</span></li>';
 				
 				 	if($paged > 2 && $paged > $range+1 && $showitems < $pages) 
 						echo '<li class="page-item"><a class="page-link" href="'.get_pagenum_link(1).'" aria-label="Primera página">&laquo;<span class="hidden-sm-down d-none d-md-block"> First</span></a></li>';
@@ -221,7 +221,9 @@
 		     * Post destacados
 		     */
 			function sm_custom_meta() {
-			    add_meta_box( 'sm_meta', __( 'Post Destacado', 'sm-textdomain' ), 'sm_meta_callback', 'post' );
+			    if ( has_post_thumbnail(  ) ) {
+			    	add_meta_box( 'sm_meta', __( 'Post Destacado (Require tener asignada una imagen destacada)', 'sm-textdomain' ), 'sm_meta_callback', 'post' );
+			    }
 			}
 			 
 			function sm_meta_callback( $post ) {
@@ -280,12 +282,8 @@
 					while ( $featured->have_posts() ) : $featured->the_post();
 				?>
 
-						<li class="media mb-2 mt-0 mt-md-2">
-						<?php 
-							if ( has_post_thumbnail() ) {
-	        			the_post_thumbnail('post-thumbnail',  array('class' => 'img-fluid mr-2' ));
-	        		}
-						?>
+					<li class="media mb-2 mt-0 mt-md-2">
+ 						<img class="img-fluid mr-2" src="<?php the_post_thumbnail_url('post-thumbnail') ?>" alt="">
 						<div class="media-body">
 						<p>
 							<a href="<?php echo the_permalink(); ?>">
@@ -293,7 +291,7 @@
 							</a>
 							</p>
 						</div>
-						</li>
+					</li>
 				<?php 
 					endwhile;
 				endif;

@@ -38,10 +38,10 @@ $comments = $comments_query->query( $args );
 		      <div class="media-body">
 		        <h5 class="my-0"><?php comment_author(); ?></h5>
 		        <p class="mt-0 mb-1 date text-muted">
-		          <small><?php echo get_comment_date(); ?></small>
+		          	<small><?php echo get_comment_date(); ?></small>
 		        </p>
 		        <div class="the-coment">
-							<?php echo $comment->comment_content; ?>
+					<?php echo $comment->comment_content; ?>
 		        </div>
 		      </div>
 		    </div>
@@ -55,7 +55,7 @@ $comments = $comments_query->query( $args );
 		
 
     <div class="d-flex coment-form-container">
-      <div style="width: 93px;"></div>
+      <div class="flex-adjust"></div>
       <div class="flex-fill">
 			<?php 
 			$args = [
@@ -69,7 +69,7 @@ $comments = $comments_query->query( $args );
 				'title_reply' 	=> '<h5>Dejar un Comentario</h5>',
 				'submit_button' => '<div class="d-flex mt-5 justify-content-end coment-by">
 								          <div class="text-right">
-								            <h6 class="mb-0 mt-3">Comentar como '.$user_identity.'</h6>
+								            <h6 class="mb-0 mt-1 mt-md-3">Comentar como '.$user_identity.'</h6>
 								            <p><small><a href="'.wp_logout_url(  ).'">¿QUIERES SALIR?</a></small></p>
 								          </div>
 								          <div class="ml-3">
