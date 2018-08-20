@@ -10,7 +10,7 @@
     <![endif]-->
 
     <?php wp_head(); ?>
-    
+
 </head>
 <body style="">
   
